@@ -1,5 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const Cookies = require('cookies');
+
+// Models
+const User = require('../models/User');
 
 router.post('/', (req, res) => {
   const { email, password } = req.body;
